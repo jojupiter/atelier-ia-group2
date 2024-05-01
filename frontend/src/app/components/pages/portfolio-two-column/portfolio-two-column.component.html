@@ -1,0 +1,152 @@
+<!-- Page Banner -->
+<div class="page-banner-area">
+    <div class="container">
+        <div class="page-banner-content">
+            <h2>Upload Video</h2>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li>Upload Video</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Upload Video -->
+<section class="product-details-area pt-100 pb-70">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <section class="contact-area pb-100">
+
+                    <div class="container">
+                        <div class="section-title">
+                            <span>Upload Video</span>
+                            
+                            <div class="bar"></div>
+                        </div>
+                    <div class="contact-form">
+                            
+                
+                <h1>Upload Video</h1>
+                <div class="form-group mb-3">                
+<input type="file" id="customFile" (change)="selectFile($event)">
+</div>
+ <!-- <button class="btn btn-primary" style="margin-left: 10px" (click)="downloadFile()">View File</button> -->
+ <div class="col-lg-12 col-md-12">
+    <button class="btn btn-primary" [disabled]="!selectedFiles || admincheck || status" (click)="upload()">Send Video</button>
+</div>
+</div>
+</div>
+             </section>     
+           
+              
+
+               
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                
+
+                                        
+                            <!-- Contact -->
+                            <section class="contact-area pb-100">
+                                <div class="container">
+                                    <div class="section-title">
+                                        <span>Blur Settings</span>
+                                        
+                                        <div class="bar"></div>
+                                    </div>
+
+                                    <div class="contact-form">
+                                        <form id="contactForm">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    
+
+                                                    <div class="form-group mb-3">
+                                                        <label>Opacity : </label>
+                                                        <mat-slider
+                                                                    [disabled]="disabled"
+                                                                    [max]="max"
+                                                                    [min]="min"
+                                                                    [step]="step"
+                                                                    [discrete]="thumbLabel"
+                                                                    [showTickMarks]="showTicks">
+                                                                <input matSliderThumb [(ngModel)]="value" #slider>
+                                                                </mat-slider>
+                                                        <label>{{slider.value}}</label>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <mat-form-field>
+                                                            <mat-label>Choose Model</mat-label>
+                                                            <mat-select [(value)]="selectedFood.value">
+                                                              @for (food of foods; track food) {
+                                                                <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                                                              }
+                                                            </mat-select>
+                                                          </mat-form-field>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div class="col-lg-12 col-md-12">
+                                                    
+                                                </div>
+
+                                                
+
+                                                <div class="col-lg-12 col-md-12">
+                                                    <button  (click)="blur()" class="default-btn">Blur Video</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- End Contact -->
+
+
+               
+            </div>
+
+
+
+            <div class="col-lg-2 col-md-12">
+                <section class="contact-area pb-100">
+
+                    <div class="container">
+                        <div class="section-title">
+                            <span>Download Video</span>
+                            
+                            <div class="bar"></div>
+                        </div>
+                    <div class="contact-form">
+                            
+                
+                <h1>Download Video</h1>
+               
+ <div class="col-lg-12 col-md-12">
+    <button class="btn btn-primary"  (click)="downloadFile2()">Download Video</button>
+</div>
+</div>
+</div>
+             </section>     
+           
+              
+
+               
+            </div>
+
+            
+          
+        </div>
+    </div>
+</section>
+<!-- End Product Details -->
